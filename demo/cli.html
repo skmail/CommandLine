@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Command Line</title>
+</head>
+<body>
+
+<!-- Mac window https://codepen.io/ryanDVthomas/pen/dXmWXE -->
+
+<div class="mac-window active">
+    <div class="title-bar">
+        <div class="buttons">
+            <div class="close"></div>
+            <div class="minimize"></div>
+            <div class="maximize"></div>
+        </div>
+        <div class="title">
+            Terminal
+        </div>
+    </div>
+    <div class="window">
+        <div id="command-line" class="command-line"></div>
+    </div>
+</div>
+
+
+
+<div class="mac-window active">
+    <div class="title-bar">
+        <div class="buttons">
+            <div class="close"></div>
+            <div class="minimize"></div>
+            <div class="maximize"></div>
+        </div>
+        <div class="title">
+            Terminal - Login
+        </div>
+    </div>
+    <div class="window">
+        <div id="command-line-2" class="command-line light"></div>
+    </div>
+</div>
+
+
+</body>
+<link rel="stylesheet" href="../dist/css/app.min.css">
+<script src="../dist/scripts/bundle.min.js"></script>
+<script src="../dist/scripts/app.min.js"></script>
+<script>
+    var cmd = DemoCommand.instance(document.getElementById('command-line'));
+    cmd.info('Type [help] to show available commands');
+    cmd.startNewCommand();
+
+
+    var cmd2 = DemoCommand.instance(document.getElementById('command-line-2'));
+    cmd2.output('Type any username to login');
+    cmd2.run('login');
+</script>
+</html>

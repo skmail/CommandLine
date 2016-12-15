@@ -1,0 +1,113 @@
+@import "http://fonts.googleapis.com/css?family=Source+Code+Pro:200,700";
+*{
+  font-family: "Source Code Pro";
+}
+.command-line{
+  font-size: 14px;
+  width:600px;
+  height: 400px;
+  background: #000;
+  overflow-x:hidden;
+  overflow-y:scroll;
+
+  &.light{
+    background-color: #fff;
+    .command-row {
+      position: relative;
+      margin-bottom: 5px;
+      &.active {
+        background: #f5f5f5;
+      }
+      .command-time {
+        color: #000;
+      }
+
+      .command-user {
+        color: #000;
+      }
+
+      .command-entry {
+        color: #000;
+      }
+    }
+  }
+
+  .command-row{
+    position: relative;
+    margin-bottom: 5px;
+    &.active{
+      background: #1d1d1d;
+    }
+    .command-time{
+      color: #e7e7e7;
+      display: inline-block;
+      padding-right: 5px;
+    }
+
+    .command-user{
+      color: #e7e7e7;
+      font-weight: 700;
+      display: inline-block;
+      padding-right: 5px;
+    }
+
+    .command-entry{
+
+      &.command-entry-protected:empty{
+        display: none;
+      }
+      padding-right: 5px;
+
+      color: #fff;
+      display: inline;
+
+      /* These are technically the same, but use both */
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+
+      -ms-word-break: break-all;
+      /* This is the dangerous one in WebKit, as it breaks things wherever */
+      word-break: break-all;
+
+      /* Adds a hyphen where the word breaks, if supported (No Blink) */
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+
+      &.block{
+        display: block;
+      }
+
+      &:focus{
+        outline: none;
+      }
+    }
+    .secret{
+      position :absolute;
+      width : 100%;
+      height : 100%;
+      left : 0;
+      opacity : 0;
+    }
+
+    &.error .command-entry{
+      font-weight: 700;
+      color: red;
+    }
+    &.success .command-entry{
+      font-weight: 700;
+      color: #00c300;
+    }
+    &.info .command-entry{
+      font-weight: 700;
+      color: #00a9ff;
+    }
+    &.warning .command-entry{
+      font-weight: 700;
+      color: orange;
+    }
+  }
+
+
+}
